@@ -77,5 +77,12 @@ app.post('/cities', async (req, res) => {
   }
 });
 
+const cors = require('cors'); // Add this line
+
+// Middleware
+app.use(cors()); // Add this line
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
